@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+
+int A;
+printf ("digite o numero de repeticoes");
+scanf ("%d", &A);
+
+int i, f=1, f2=1, fa;
+fn=f;
+for (i=0; i < A; i++){
+
+printf("%d\n", fa);
+fn = f + f2;
+f = f2;
+f2 = fa;
+
+}
+
+return 0;
+}

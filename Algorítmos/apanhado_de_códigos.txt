@@ -1,0 +1,191 @@
+int matriz[L][L]={{1, 2}
+                    {3, 4}
+                    {5, 6}}
+
+int m[L][L] = {
+        23,173,105,11,12,164,66,9,69,132,117,48,
+        36,139,133,48,184,20,134,102,113,7,27,51,
+        135,120,158,191,38,200,153,146,18,22,16,158,
+        32,57,46,27,77,189,144,152,184,51,131,129,
+        40,79,160,184,84,4,168,112,191,59,111,28,
+        80,120,165,69,3,81,184,155,164,172,167,173,
+        192,59,22,18,191,127,136,13,55,71,143,93,
+        63,17,36,187,163,64,172,147,155,33,8,63,
+        13,197,66,200,118,32,182,31,74,125,49,98,
+        110,85,175,100,182,123,40,54,64,91,193,81,
+        164,76,28,76,158,72,145,165,72,34,28,24,
+        29,171,151,143,82,192,51,192,128,3,109,134 
+    };
+
+#include <stdio.h>
+#define L 3
+#define C 2
+
+int main(void) {
+
+  int m[L][C];
+  int lin, col;
+
+    for(lin=0;lin<L;lin++){
+      for(col=0;col<C;col++){
+        printf("Declare o valor da linha[%i] na coluna[%i]:",lin, col);
+        scanf("%i", &m[lin][col]);
+      }
+    }
+
+    for(lin=0; lin<L; lin++){
+      printf("\n");
+      for(col=0; col<C; col++){
+        printf("%i\t",m[lin][col]);
+      }
+    }
+    printf("\n");
+    for(col=0; col<C; col++){
+      printf("\n");
+      for(lin=0; lin<L; lin++){
+        printf("%i\t",m[col][lin]);
+      }
+    }
+
+return 0;
+}
+
+
+#include <stdio.h>
+#define L 3
+#define C 2
+
+int main(void) {
+
+  int m[L][C];
+  int lin, col;
+
+    for(lin=0;lin<L;lin++){
+      for(col=0;col<C;col++){
+        printf("Declare o valor da linha[%i] na coluna[%i]:",lin, col);
+        scanf("%i", &m[lin][col]);
+      }
+    }
+
+    for(lin=0; lin<L; lin++){
+      printf("\n");
+      for(col=0; col<C; col++){
+        printf("%i\t",m[lin][col]);
+      }
+    }
+    printf("\n");
+    for(col=0; col<C; col++){
+      printf("\n");
+      for(lin=0; lin<L; lin++){
+          lin = col;
+          col=lin;
+          printf("%i\t",m[col][lin]);
+      }
+    }
+
+return 0;
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main (){
+int i,j; 
+int  a[3][2]={1, 2,
+              3, 4,
+              5, 6};
+int at[2][3];
+    for(i=0;i<3;i++){
+        for(j=0;j<3;i++){
+            at[j][i]= a[i][j];
+        }
+    }
+
+    for(i=0;i<2;i++){
+        for(j=0;j<3;i++){
+        printf("%i\t",at[i][j]);
+            printf("\n");
+        }
+    }
+
+
+
+  return 0;
+}
+
+#include <stdio.h>
+#define L 3
+#define C 2
+
+int main(){
+
+    int m[L][C];
+    int i, lin, col, aux;
+
+    for(lin = 0; lin < L; lin++){
+        for(col = 0; col < C; col++){
+            printf("digite o valor do vetor para a linha [%i], coluna [%i]: ", lin, col);
+            scanf("%i", &m[lin][col]);
+            if(m[lin][col] < 0){
+                m[lin][col] = m[lin][col] * -1;
+            }
+        }
+    }
+
+    printf("\n\nMatriz");
+
+    for(lin = 0; lin < L; lin++){
+        printf("\n");
+        for(col = 0; col < C; col++){
+        printf("%i\t", m[lin][col]);
+        }
+    }
+
+    printf("\n\nMatriz transposta");
+
+    for(lin = 0; lin < C; lin++){
+        printf("\n");
+        for(col = 0; col < L; col++){
+            printf("%i\t", m[col][lin]);
+        }
+    }
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <math.h>
+
+int Forma_triangulo(float a, float b, float c);
+float Area_do_triangulo(float a, float b, float c);
+int main() {
+
+    int eh_triangulo;
+    float a, b, c;
+    float area;
+
+    printf("Digite os valores para serem analisados: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    eh_triangulo = Forma_triangulo(a, b, c);
+    if(eh_triangulo == 0){
+        printf("Forma um triangulo");
+        area = Area_do_triangulo(a, b, c);
+    }
+    else{
+        printf("Nao forma um triangulo");
+    }
+
+    return 0;
+}
+
+int Forma_triangulo(float a, float b, float c){
+    if(a + b > c && b + c > a && a + c > b){
+        return 0;
+    }
+}
+
+float Area_do_triangulo(float a, float b, float c){
+
+}
+}

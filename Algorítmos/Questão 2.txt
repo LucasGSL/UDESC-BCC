@@ -1,0 +1,42 @@
+//Lucas Gesser dos Santos
+//Exercicio 1 - Questão de Matrizes
+#include <stdio.h>
+#define L 6
+int t, i, status, l, c, x, y, s = 0;
+int Distancia[L][L] = {
+     0,63,210,190,0,190,
+     63,0,160,150,95,0,
+     210,160,0,10,0,0,
+     190,150,10,0,0,0,
+     0,95,0,0,0,80,
+     190,0,0,0,80,0
+     };
+int main(){
+    //0.(Cáceres) 1.(BBugres) 2.(Cuiabá) 3.(VGrande) 4.(Tangará) 5.(PLacerda)
+    printf("  |0\t1\t2\t3\t4\t5\n");
+    printf("---------------------------");
+    for(l=0;l<L;l++){
+      printf("\n");
+      printf("%i |", l);
+        for(c=0;c<L;c++){
+            printf("%i\t", Distancia[l][c]);
+        }
+    }
+    printf("\n\n");
+    printf("Abaixo, o numero correspondente a cada cidade\n");
+    printf("0 - Caceres \n1 - B.Bugres \n2 - Cuiaba \n3 - V.Grande \n4 - Tangara \n5 - P.Lacerda\n\n");
+    do{
+        printf("Digite o numero da cidade atual e o numero da proxima cidade\n");
+        scanf("%i %i", &x, &y);
+        if(Distancia[x][y]==0){
+            printf("\nNao possui uma rota possivel");
+            return 0;
+        }
+        printf("\nDistancia: %i km\n", Distancia[x][y]);
+            s = s + Distancia[x][y];
+        printf("\nContinuar viagem?\n1 = Sim\n2 = Nao\n");
+        scanf("%i", &status);
+    }while(status==1);
+    printf("\nDistancia total percorrida: %i km", s);
+    return 0;
+}

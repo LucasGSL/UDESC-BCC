@@ -1,0 +1,49 @@
+//Lucas Gesser dos Santos
+//Exercício 2 - Questão 5 de Matrizes
+#include <stdio.h>
+#define L 12
+int l, c, maior_final, maior_calculo(int M[L][L], int maior_final, int l, int c);
+int m[L][L] = {
+        137,381,539,886,305,624,278,925,970,54,765,794,
+        514,894,14,125,495,108,326,478,72,682,807,625,
+        384,692,603,543,201,580,679,581,118,564,741,842,
+        810,710,896,575,503,409,469,297,422,593,792,530,
+        519,269,602,600,76,226,983,767,829,526,967,408,
+        205,548,525,769,434,266,610,244,975,505,818,914,
+        287,775,335,879,566,864,797,835,466,397,910,691,
+        380,676,520,405,643,927,110,191,452,878,717,488,
+        867,199,685,170,906,971,999,241,850,510,104,646,
+        344,569,42,254,260,930,780,572,707,436,762,158,
+        313,386,875,800,252,567,937,736,697,907,680,756,
+        189,41,402,533,444,787,870,865,716,649,355,626
+    };
+int main(){
+  printf("\nMatriz\n\n");
+    for(l=0;l<L;l++){
+      for(c=0;c<L;c++){
+        if(l+c<=L-1&&l>=c){
+          maior_final=maior_calculo(m, maior_final, l, c);
+          }
+      }
+  }
+    for(l=0;l<L;l++){
+      for(c=0;c<L;c++){
+        printf("%i\t", m[l][c]);
+      }
+        printf("\n");
+    }
+    printf("\n");
+    printf("Maior valor da area hashurada: %i", maior_final);
+    printf("\n");
+    return 0;
+}  
+int maior_calculo(int m[L][L], int maior_final, int l, int c){
+    if(m[l][c] > maior_final){
+        return m[l][c];
+    }else{
+      if(m[l][13-c] > maior_final){
+        maior_final = m[l][13-c];
+      }  
+      return maior_final;
+    }
+}
